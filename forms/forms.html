@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" conte="Digite a descrição da sua página">
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <script src="./apps.js"></script>
+</head>
+<style>
+    /* Responsive grid-view */
+    * {box-sizing: border-box;} 
+    html, body {
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    main {
+        margin-top: 10vh;
+        padding: 3rem;
+        background-color: blue;
+        border-radius: 2rem;
+    }
+    h2 {
+        margin-top: 10px;
+        color: white;
+        font-weight: 900;
+        font-size: 50px;
+    }
+    hr {
+        margin: 1rem 0 1rem 0;
+        text-decoration: none;
+        border: white solid 1px;
+        outline: none;
+    }
+    form {
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+    legend {
+        font-size: 20px;
+        font-weight: 700;
+        margin: .7rem 0 .4rem 0;
+        color: white;
+    }
+    label {
+        margin: .7rem 0 .4rem 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .input_text, select {
+        text-decoration: none;
+        border: none;
+        outline: none;
+        border-radius: 1rem;
+        padding: .3rem 0 .3rem .4rem;
+        font-size: 16px;
+    }
+    .input_submit-bottom {
+        text-decoration: none;
+        border: none;
+        outline: none;
+        margin: .5rem 0 0 0;
+        font-size: 15px;
+        background-color: rgb(202, 202, 202);
+        color: rgb(1, 13, 245);
+        padding: .4rem 0 .4rem 0;
+        width: 6rem;
+        align-self: flex-end;
+        border-radius: 1rem;
+    }
+    .textarea-box {
+        margin-top: 1rem;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        border-radius: 1rem;
+        padding: 1rem;
+        width: 25rem;
+    }
+    .input_datalist {
+        margin-top: 1rem;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        border-radius: 1rem;
+        padding: .3rem 0 .3rem .4rem;
+        font-size: 16px;
+    }
+    .form_output {
+        margin: 1rem 0 0 0;
+        height: 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    input[type="range"] {
+        width: 10rem; /* Define a largura da barra de rolagem */
+        height: 1rem;
+        
+    }
+    .input_output {
+        display: flex;
+        width: 5rem;
+    }
+    
+</style>
+<body>
+    <!-- GRID -->
+    <!-- <header class="cabeçalho">
+        <h1>HEADER</h1>
+    </header>
+    <aside class="menu">
+        <p>MENU</p>
+    </aside> -->
+    <main class="principal container">
+        <h2>Forms Example</h2>
+        <hr>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <form action="/action_page.php" target="_blank" method="post" novalidate autocomplete="on" autocapitalize="on">
+                <!-- Texto -->
+                <label for="name">First name:</label>
+                <input class="input_text" type="text" id="firstname" name="firstname" value="firstname">
+                <label for="lname">Last name</label>
+                <input class="input_text" type="text" id="lastname" name="lastname" value="lastname">
+                <label for="status">Status</label>
+                <!-- Opções -->
+                <select name="status" id="status" multiple size="2">
+                    <option value="married" selected>Married</option>
+                    <option value="single">Single</option>
+                </select>
+                <textarea class="textarea-box" name="bio" rows="10" cols="100" placeholder="Tell us your story about..."></textarea>
+                <!-- DATALIST -->
+                <input class="input_datalist" list="formations">
+                <datalist class="datalist" id="formations">
+                    <option value="middle-school"></option>
+                    <option value="college"></option>
+                    <option value="Phd"></option>
+                    <option value="master"></option>
+                </datalist>
+                <!-- Botão de envio do formulário -->
+                <input class="input_submit-bottom" type="submit" value="Submit">
+            </form>
+            <form method="get" class="form_output" action="/action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                <span>0</span>
+                <input class="input_output_barra" type="range" id="a" name="a" value="50">
+                <span>100 +</span> 
+                <input class="input_output" type="number" id="b" name="b" value="50">
+                <span>=</span>
+                <output name="x" for="a b"></output>
+                <br><br>    
+                <input class="input_submit-bottom" type="submit">
+            </form>
+        </fieldset>
+    </main>
+    <!-- <section>
+        <p>SEÇÃO</p>
+    </section>
+    <nav>
+        <span>BARRA</span>
+    </nav>
+    <footer>
+        <span>FOOTER</span>
+    </footer> -->
+    <!-- JAVASCRIPT -->
+    <script src="./apps.js"></script>
+</body>
+</html>
