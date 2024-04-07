@@ -1,0 +1,70 @@
+/* https://www.altamira.ai/blog/common-screen-sizes-for-responsive-web-design/ */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+body {
+    min-height: 100vh;
+    background-color: black;
+}
+/* Desktop first */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.desktop {
+    font-size: 50px;
+    margin: 2rem;
+    color: white;
+    width: 4rem;
+    height: 2rem;
+}
+.tablet {
+    font-size: 50px;
+    margin: 2rem;
+    color: black;
+    width: 4rem;
+    height: 2rem;
+}
+
+.mobile {
+    font-size: 50px;
+    margin: 2rem;
+    color: rgb(0, 0, 0);
+    width: 4rem;
+    height: 2rem;
+}
+
+
+
+/* Tablet */
+@media screen and (max-width: 800px){ 
+    body {
+        background-color: rgb(0, 255, 149);
+    }
+    .desktop, .mobile {
+        color: rgb(0, 255, 149);
+    }
+    
+}
+
+/* Mobile */
+
+@media screen and (max-width: 375px){
+    body {
+        background-color: rgb(249, 241, 2);
+    }
+    .tablet, .desktop {
+        color:rgb(249, 241, 2);
+    }
+    /* deve-se estilar o .mobile pois ele herda estilos da media screen de tablet. Apesar de .mobile ja ter sido estilizado com color: black; */
+    .mobile {
+        color: black;
+    }
+}
