@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.projetos__grid-container__item {
+  position: relative;
+  width: 50%;
+}
+
+.escondido__projetos__grid-container__item {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.escondido {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.projetos__grid-container__item:hover .imagem {
+  opacity: 0.3;
+}
+
+.projetos__grid-container__item:hover .escondido {
+  opacity: 1;
+}
+
+.escondido__projetos__grid-container__item {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Opacity with Box</h2>
+<p>Hover over the escondido__projetos__grid-container__item to see the effect.</p>
+
+<div class="projetos__grid-container__item">
+  <img class="imagem" src="./Captura de tela 2024-04-08 105902.png" alt="Avatar" style="width:100%">
+  <div class="escondido">
+    <div class="escondido__projetos__grid-container__item">
+      <a href="#">
+        <img src="./currency_exchange_finance_coins_money_usd_dollar_icon_262507.png" width="100px" height="100px">
+      </a>
+      <a href="#">
+        <img src="./instagram_insta_logo_icon_250828.png" width="100px" height="100px">
+      </a>
+    </div>
+  </div>
+</div>
+  
+</body>
+</html>
