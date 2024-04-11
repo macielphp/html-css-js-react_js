@@ -8,14 +8,6 @@
   width: 50%;
 }
 
-.escondido__projetos__grid-container__item {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
 
 .escondido {
   transition: .5s ease;
@@ -27,6 +19,14 @@
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
+.escondido__container {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
 
 .projetos__grid-container__item:hover .imagem {
   opacity: 0.3;
@@ -36,11 +36,7 @@
   opacity: 1;
 }
 
-.escondido__projetos__grid-container__item {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-}
+
 
 </style>
 </head>
@@ -52,7 +48,7 @@
 <div class="projetos__grid-container__item">
   <img class="imagem" src="./Captura de tela 2024-04-08 105902.png" alt="Avatar" style="width:100%">
   <div class="escondido">
-    <div class="escondido__projetos__grid-container__item">
+    <div class="escondido__container">
       <a href="#">
         <img src="./currency_exchange_finance_coins_money_usd_dollar_icon_262507.png" width="100px" height="100px">
       </a>

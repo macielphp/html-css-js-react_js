@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Escolha sua fruta favorita:</h1>
+
+<input type="text" id="fruta-escolhida" placeholder="Digite o nome da fruta">
+<button onclick="exibirFruta()">Exibir Detalhes</button>
+
+<p id="fruta-detalhes"></p>
+
+<script>
+function exibirFruta() {
+  let fruta = document.getElementById("fruta-escolhida").value.toLowerCase();
+  let detalhes;
+
+  switch (fruta) {
+    case "maçã":
+      detalhes = "A maçã é uma fruta rica em vitaminas e minerais, especialmente vitamina C e potássio. É conhecida por seus benefícios para a saúde cardiovascular e digestiva.";
+      break;
+    case "banana":
+      detalhes = "A banana é uma excelente fonte de potássio, vitamina B6 e fibras. É uma fruta energética e fácil de transportar, ideal para lanches rápidos.";
+      break;
+    case "laranja":
+      detalhes = "A laranja é rica em vitamina C, um poderoso antioxidante que ajuda a fortalecer o sistema imunológico. É também uma boa fonte de ácido fólico e potássio.";
+      break;
+    case "kiwi":
+      detalhes = "O kiwi é uma fruta rica em vitamina C, vitamina E e potássio. É conhecido por seus benefícios para a saúde da visão e da pele.";
+      break;
+    default:
+      detalhes = "Fruta não encontrada. Tente digitar o nome da fruta novamente.";
+  }
+
+  document.getElementById("fruta-detalhes").innerHTML = detalhes;
+}
+</script>
+
+</body>
+</html>

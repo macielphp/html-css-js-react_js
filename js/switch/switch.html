@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+    .week-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+    
+    .day {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+      cursor: pointer;  /* Add a pointer for hover effect (optional) */
+    }
+    
+    .day:hover {
+      background-color: #1b79dd;  /* Add a hover effect (optional) */
+    }
+    
+    .hidden {
+      display: none;
+    }
+</style>
+
+<h2>What Day is it?</h2>
+
+<div id="day-display" class="hidden">Today is: <span id="day-name"></span></div>
+
+<script>
+let day;
+let dayNumber = new Date().getDay();  // Get the current day number (0-6)
+
+// Create a visual representation of the week using a container and day elements
+const weekContainer = document.createElement('div');
+weekContainer.classList.add('week-container');
+document.body.appendChild(weekContainer);
+
+for (let i = 0; i < 7; i++) {
+  const dayElement = document.createElement('div');
+  dayElement.classList.add('day');
+  dayElement.textContent = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][i];  // Set day names
+  weekContainer.appendChild(dayElement);
+}
+
+switch (dayNumber) {
+  case 0:
+    day = "Sunday";
+    document.getElementById('day').style.backgroundColor = "coral"; // Highlight Sunday
+    break;
+  case 1:
+    day = "Monday";
+    document.getElementById('day').style.backgroundColor = "lightblue"; // Highlight Monday
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  // ... add cases for other days (Wednesday, Thursday, Friday, Saturday)
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+    break;
+  default:
+    day = "Invalid Day";
+}
+
+document.getElementById("day-name").textContent = day;
+document.getElementById("day-display").classList.remove('hidden'); // Display the result
+</script>
+
+
+</body>
+</html>
