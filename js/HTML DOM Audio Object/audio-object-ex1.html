@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Player</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.audio-player {
+    margin-top: 50px;
+}
+
+audio {
+    width: 300px;
+    margin: 0 auto;
+}
+
+
+</style>
+<body>
+<div class="audio-player">
+    <h1>Afirmações  positivias</h1>
+    <audio controls id="audio-player">
+        <source src="./audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+<script src="script.js">
+    const audioPlayer = document.getElementById('audio-player');
+
+audioPlayer.onplay = function() {
+    alert('Audio is playing');
+};
+
+audioPlayer.onpause = function() {
+    alert('Audio is paused');
+};
+
+audioPlayer.onended = function() {
+    alert('Audio has ended');
+};
+
+</script>
+</body>
+</html>
