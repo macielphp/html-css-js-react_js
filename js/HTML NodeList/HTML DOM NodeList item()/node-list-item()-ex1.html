@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de HTML DOM NodeList item()</title>
+<style>
+    /* Estilo simples para destacar os itens do NodeList */
+    .highlight {
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+
+<h2>Exemplo de HTML DOM NodeList item()</h2>
+
+<ul id="minhaLista">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+
+<button onclick="realcarItem()">Realçar o segundo item</button>
+
+<script>
+    function realcarItem() {
+        // Obtendo a lista de elementos <li>
+        var listaItems = document.querySelectorAll("#minhaLista li");
+
+        // Acessando o segundo item (indice 1) da NodeList e adicionando a classe de destaque
+        listaItems.item(4).classList.add('highlight');
+    }
+</script>
+
+</body>
+</html>
