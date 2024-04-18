@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textarea Cols Attribute</title>
+</head>
+<body>
+
+<label for="message">Escreva sua mensagem:</label><br>
+<textarea id="message" name="message" cols="10" rows="5"></textarea><br>
+
+<button onclick="displayMessage()">Mostrar Mensagem</button>
+<p id="demo">Demo</p>
+<script>
+function displayMessage() {
+  const message = document.getElementById('message').value;
+  const demo = document.getElementById('demo');
+  demo.innerHTML = `Sua mensagem é: ${message}`;
+}
+</script>
+
+</body>
+</html>

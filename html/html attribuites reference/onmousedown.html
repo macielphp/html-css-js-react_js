@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas Drawing</title>
+<style>
+#canvas {
+  border: 2px solid #000;
+}
+</style>
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+let isDrawing = false;
+
+canvas.addEventListener('mousedown', startPosition);
+canvas.addEventListener('mouseup', endPosition);
+canvas.addEventListener('mousemove', draw);
+
+function startPosition(event) {
+  isDrawing = true;
+  draw(event);
+}
+
+function endPosition() {
+  isDrawing = false;
+  context.beginPath();
+}
+
+function draw(event) {
+  if (!isDrawing) return;
+
+  context.lineWidth = 5;
+  context.lineCap = 'round';
+  context.strokeStyle = '#000';
+
+  const x = event.clientX - canvas.offsetLeft;
+  const y = event.clientY - canvas.offsetTop;
+
+  context.lineTo(x, y);
+  context.stroke();
+  context.beginPath();
+  context.moveTo(x, y);
+}
+</script>
+
+</body>
+</html>

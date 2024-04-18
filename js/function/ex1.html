@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de Uso de Valor de Retorno de Função</title>
+</head>
+<body>
+
+<h2>Exemplo de Uso de Valor de Retorno de Função</h2>
+
+<p>Clique no botão para gerar um número aleatório entre 1 e 10:</p>
+
+<button onclick="displayRandomNumber()">Gerar Número Aleatório</button>
+
+<p>O número aleatório gerado é: <span id="randomNumber"></span></p>
+
+<script>
+function generateRandomNumber() {
+    return Math.floor(Math.random() * 10) + 1; // Retorna um número aleatório entre 1 e 10
+}
+
+function displayRandomNumber() {
+    document.getElementById("randomNumber").innerHTML = generateRandomNumber();
+}
+</script>
+
+</body>
+</html>

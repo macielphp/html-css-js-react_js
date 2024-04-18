@@ -1,0 +1,37 @@
+<!-- Claro! Vou criar um exemplo conceitual para explicar a função do elemento <datalist> em HTML. O elemento <datalist> é usado para especificar uma lista de opções predefinidas para um elemento <input>.
+
+ -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de Datalist</title>
+</head>
+<body>
+
+<label for="frutas">Escolha uma fruta:</label>
+<input list="frutas" id="input-frutas" name="frutas" placeholder="Digite ou escolha uma fruta">
+<datalist id="frutas-list">
+  <option value="Maçã">
+  <option value="Banana">
+  <option value="Laranja">
+  <option value="Uva">
+</datalist>
+
+<button onclick="mostrarSelecao()">Mostrar Seleção</button>
+<p id="resultado"></p>
+
+<script>
+function mostrarSelecao() {
+  const inputElement = document.getElementById('input-frutas');
+  const selectedOption = inputElement.value;
+  document.getElementById('resultado').innerText = "Você escolheu: " + selectedOption;
+}
+</script>
+
+</body>
+</html>
+<!-- Neste exemplo, temos um elemento <input> com o ID "input-frutas" que utiliza o atributo list para se associar ao elemento <datalist> com o ID "frutas-list". Isso cria uma lista de opções predefinidas que são exibidas quando o usuário digita no campo de entrada.
+
+Quando o usuário digita no campo de entrada e clica no botão "Mostrar Seleção", a função mostrarSelecao() é chamada. Dentro dessa função, o valor inserido no campo de entrada é obtido usando inputElement.value, e é exibido como resultado. Isso demonstra como o elemento <datalist> é usado para especificar uma lista de opções predefinidas para um elemento <input> em HTML. -->
