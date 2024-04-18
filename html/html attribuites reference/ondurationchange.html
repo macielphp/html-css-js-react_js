@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de Evento ondurationchange</title>
+</head>
+<body>
+
+<audio id="myAudio" controls>
+  <source src="sample.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<script>
+// Obtém o elemento de áudio
+var audio = document.getElementById("myAudio");
+
+// Adiciona um ouvinte de evento para ondurationchange
+audio.ondurationchange = function() {
+  console.log("A duração da mídia mudou para: " + audio.duration + " segundos.");
+};
+</script>
+
+</body>
+</html>
