@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de Conversão para String UTC</title>
+</head>
+<body>
+
+<h2>Exemplo de Conversão para String UTC</h2>
+
+<p>Clique no botão para obter a data atual no formato UTC:</p>
+
+<button onclick="converteParaUTC()">Obter Data UTC</button>
+
+<p id="resultado"></p>
+
+<script>
+function converteParaUTC() {
+  // Obtém a data atual
+  var dataAtual = new Date();
+
+  // Converte a data para uma string no formato UTC
+  var stringUTC = dataAtual.toUTCString();
+
+  // Exibe a string formatada na página
+  document.getElementById("resultado").innerHTML = "Data em formato UTC: " + stringUTC;
+}
+</script>
+
+</body>
+</html>
