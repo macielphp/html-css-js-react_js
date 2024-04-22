@@ -1,0 +1,34 @@
+<!-- 
+    O que é um Grid-View em Web Design? A) Uma lista de elementos B) Uma página dividida em colunas C) Um estilo de fonte
+    Resposta Correta: B) Uma página dividida em colunas
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Grid-View</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background-color: lightskyblue;
+            padding: 10px;
+        }
+        .grid-item{
+            padding: 20px;
+            text-align: center;
+            background-color: orangered;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="grid-container">
+       
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+    </div>
+ </body>
+ </html>

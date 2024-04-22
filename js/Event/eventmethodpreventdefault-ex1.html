@@ -1,0 +1,33 @@
+<!-- 
+Quando pode ser útil utilizar o preventDefault()? A) Ao clicar em um botão de envio de formulário. B) Ao iniciar um evento. C) Ao encerrar uma operação.
+Alternativa correta: A) Ao clicar em um botão de envio de formulário. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de preventDefault()</title>
+</head>
+<body>
+
+<form id="meuFormulario">
+    <input type="text" id="campoNome" placeholder="Nome">
+    <input type="email" id="campoEmail" placeholder="Email">
+    <button id="botaoEnviar">Enviar</button>
+</form>
+
+<script>
+document.getElementById('meuFormulario').addEventListener('submit', function(event) {
+    // Validar os campos do formulário
+    if (document.getElementById('campoNome').value === '' || document.getElementById('campoEmail').value === '') {
+        alert('Por favor, preencha todos os campos.');
+        event.preventDefault(); // Impedir o envio do formulário
+    } else {
+        // Enviar os dados via AJAX ou realizar outra operação
+        alert('Formulário enviado com sucesso!');
+    }
+});
+</script>
+
+</body>
+</html>

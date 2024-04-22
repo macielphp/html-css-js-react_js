@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio insertBefore()</title>
+</head>
+<style>
+    .arrastar:hover {
+        cursor: grab;
+    }
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+    ol {
+        padding: 10px;
+        background-color: antiquewhite;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    li {
+        padding: 5px;
+        background-color: black;
+        color: wheat;
+        font-size: 16px;
+    }
+</style>
+<body>
+
+    <h1>Desafio Insert Before</h1>
+    <ol>
+        <li class="arrastar" draggable="true">Arrumar a casa</li>
+        <li class="arrastar" draggable="true">Lavar as roupas</li>
+        <li class="arrastar" draggable="true">Cozinhar comida</li>
+    </ol>
+
+    <script>
+        const itensArrastar = document.querySelectorAll('.arrastar');
+        const lista = document.querySelector('ol');
+
+        itensArrastar.forEach(item => {
+            item.addEventListener('dragstart', evento => {
+                evento.dataTransfer.setData('text/plain', item.textContent);
+            });
+        });
+
+        lista.addEventListener('dragover', evento => {
+            evento.preventDefault();
+        });
+
+        lista.addEventListener('drop', evento => {
+            evento.preventDefault();
+            const itemArrastadoText = evento.dataTransfer.getData('text/plain');
+            const novoItem = document.createElement('li');
+            novoItem.textContent = itemArrastadoText;
+            lista.insertBefore(novoItem, evento.target);
+        });
+    </script>
+</body>
+</html>
