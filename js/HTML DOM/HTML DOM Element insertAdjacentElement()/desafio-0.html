@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio insertAdjacentElement()</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    div {
+        background-color: red;
+    }
+</style>
+<body>
+    <h1>Tarefas</h1>
+    <h2>Lista de tarefas</h2>
+    <ul id="tarefas">
+        <li id="tarefa">Arrumar a casa</li>
+        <li id="tarefa">Lavar as roupas</li>
+    </ul>
+    <label for="adicionarTarefa">Nova tarefa</label>
+    <input type="text" name="adicionarTarefa" id="tarefaAdicionada" placeholder="digite o nome da tarefa">
+    <button id="btnAdicionarTarefa">Adicionar</button>
+    <script>
+        const primeraTarefa = document.querySelector('#tarefas')
+        const btnAdicionarTarefa = document.getElementById('btnAdicionarTarefa');
+        const listaTarefas = document.getElementById('tarefas');
+        btnAdicionarTarefa.addEventListener('click', () => {
+            const tarefaAdicionada = document.getElementById('tarefaAdicionada').value;
+            const li = document.createElement('li')
+            li.textContent = tarefaAdicionada;
+            
+            const primeiroItem = listaTarefas.firstElementChild;
+            primeiroItem.insertAdjacentElement('beforebegin', li)
+        })
+       
+    </script>
+    
+</body>
+</html>
