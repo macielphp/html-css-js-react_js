@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01 insertAdjacentHTML</title>
+    <link rel="stylesheet" href="/reset.css">
+</head>
+<style>
+body {
+    width: 100%;
+}
+*{
+    box-sizing: border-box;
+}
+    .navbar-fixo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(255, 139, 139);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Aumentei o z-index para garantir que fique acima do conteúdo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicionei uma sombra para separar o navbar do conteúdo */
+}
+.navbar-fixo button{
+    padding: 1em;
+    display: inline-block;
+    color: var(--cor-texto);
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s; /* Adicionei uma transição suave para as mudanças de cor */
+}
+
+h1 {
+    font-size: 30px;
+    align-self: center;
+}
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 20px;
+}
+.post__header{
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+}
+.post__header__profile-photo {
+    width: 30px; 
+    height: 30px;
+}
+.post__header__user__name{
+    font-weight: 700;
+}
+.post__header__btn img{
+    width: 25px;
+    height: 25px;
+}
+.post__body{
+    width: 400px;
+}
+.post__body__image-post{
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+</style>
+<body>
+    <h1>Tuiter</h1>
+    <nav class="navbar-fixo">
+        <button>Adicionar Post</button>
+    </nav>
+    <section>
+        <div class="post">
+            <div class="post__header">
+                <img class="post__header__profile-photo" src="./profile-photo.svg" alt="foto do perfil do usuário">
+                <span class="post__header-user-name">Nome do usuário</span>
+                <button class="post__header__btn"><img src="./remove-post.svg" alt=""></button>
+            </div>
+            <div class="post__body__image-post">
+                <img class="post__body__" src="./post-usarname-1.jpg" alt="A picnic on a green meadow with a basket of fruits and flowers gerado com AI em 16/01/2024">
+            </div>
+            <div class="post">
+                <div class="post__header">
+                    <img class="post__header__profile-photo" src="./profile-photo.svg" alt="foto do perfil do usuário">
+                    <span class="post__header-user-name">Nome do usuário</span>
+                    <button class="post__header__btn"><img src="./remove-post.svg" alt=""></button>
+                </div>
+                <div class="post__body__image-post">
+                    <img class="post__body__" src="./post-username-2.jpg" alt="An endless library with books that float to readers on command, overseen by a robotic librarian
+                    gerado com AI em 21/02/2024">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

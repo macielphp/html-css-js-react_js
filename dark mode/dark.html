@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .dark-mode {
+            --label-icon: url('https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/sol.png');
+            --trono-img: url('https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/trono-branco.png');
+            --cor-fundo: black;
+            --cor-fonte: white;
+        }
+        body {
+            background: var(--cor-fundo);
+            color: var(--cor-fonte);
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-size: 30px;
+            font-weight: 900 ;
+        }
+        :root {
+            --label-icon: url('https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/lua.png');
+            --trono-img: url('https://caelum-online-public.s3.amazonaws.com/1369-alura-mais-dark-mode/trono-preto.png')
+        }
+        .mudar-tema {
+            background: var(--label-icon);
+            padding: 67px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            cursor: pointer;
+            transition: 2s;
+        }
+        .trono {
+            background-image: var(--trono-img);
+            background-size: cover;
+            width: 450px;
+            height: 350px;
+            margin-bottom: 30px;
+            position: relative;
+            top: 10%;
+        }
+        #btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn">
+    <label for="btn" class="mudar-tema"></label>
+
+    <section class="container">
+        <div class="trono"></div>
+        <p>O inverno está chegando</p>
+    </section>
+    <script>
+        document.querySelector('#btn').addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode")
+        })
+
+    </script>
+</body>
+</html>
