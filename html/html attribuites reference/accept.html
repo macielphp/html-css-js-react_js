@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accept</title>
+</head>
+<style>
+    code {
+        background-color: gray;
+        border-radius: 3px;
+        color: white;
+        padding: 2px
+    }
+</style>
+<body>
+    <h1>Usando o atributo Accept</h1>
+    <p>Com este atributo <code>accept=".txt, .pdf, .docx"</code> inserido na tag <code>&lt;input&gt;</code>, possibilita que o navegador aceite apenas arquivos naqueles formatos inseridos.
+    </code></p>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Selecione um arquivo:</label><br>
+        <input type="file" id="file" name="file" accept=".txt, .pdf, .docx"><br>
+        <input type="submit" value="Enviar">
+      </form>
+</body>
+</html>

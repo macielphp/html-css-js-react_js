@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evento de Erro</title>
+</head>
+<body>
+
+<h1>Evento de Erro</h1>
+
+<script>
+    function carregarImagem() {
+        var imagem = document.getElementById("imagem");
+        imagem.src = "imagem_que_nao_existe.jpg";
+    }
+
+    // Adicionando um manipulador de eventos para o evento onerror
+    window.onerror = function(message, source, lineno, colno, error) {
+        alert("O seguinte erro ocorreu: " + message);
+        console.log("Source:", source);
+        console.log("Linha:", lineno);
+        console.log("Coluna:", colno);
+        console.log("Erro:", error);
+    };
+</script>
+
+<button onclick="carregarImagem()">Carregar Imagem</button>
+
+<!-- A imagem que tentaremos carregar, mas ela não existe -->
+<img id="imagem" style="display: none;">
+
+</body>
+</html>
