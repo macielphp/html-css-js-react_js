@@ -14,6 +14,14 @@
         "123 é NaN? " + isNaN(123) + "<br>" + 
         "-4.23 é NaN? " + isNaN(-4.23) + "<br>" +
         "42- 42 é NaN? " + isNaN(42-42) + "<br>" +
+        "'NaN' é NaN? " + isNaN('NaN') + "<br>" +
+        "NaN é NaN? " + isNaN(NaN) + "<br>" +
+        "undefined é NaN? " + isNaN(undefined) + "<br>" +
+        "null é NaN? " + isNaN(null) + "<br>" +
+        "string vazia é NaN? " + isNaN("") + "<br>" +
+        "false é NaN? " + isNaN(false) + "<br>" +
+        "true é NaN? " + isNaN(true) + "<br>" +
+        "0/0 é NaN? " + isNaN(0/0) + "<br>" +
         "0 é NaN? " + isNaN(0);
         document.getElementById('demo').innerHTML = result;
 
