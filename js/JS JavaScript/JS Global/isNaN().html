@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isNaN()</title>
+</head>
+<body>
+    <h1>O método isNaN()</h1>
+    <p>isNaN() retorna <code>true</code> se o valor é NaN.</p>
+    <p id="demo"></p>
+    <script>
+        let result = 
+        "123 é NaN? " + isNaN(123) + "<br>" + 
+        "-4.23 é NaN? " + isNaN(-4.23) + "<br>" +
+        "42- 42 é NaN? " + isNaN(42-42) + "<br>" +
+        "0 é NaN? " + isNaN(0);
+        document.getElementById('demo').innerHTML = result;
+
+    </script>
+</body>
+</html>
