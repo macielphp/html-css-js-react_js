@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parseFloat()</title>
+</head>
+<body>
+    <h1>Método parseFloat()</h1>
+    <p>Se o primeiro caracter não for convertido, <code>NaN</code> é retornado.<br>Apenas o primeiro número será retornado.<br>Espaços são ignorados.</p>
+    <p id="demo"></p>
+    <script>
+        document.getElementById('demo').innerHTML = 
+        parseFloat('40.00') + "<br>" + 
+        parseFloat('40,00') + "<br>" +
+        parseFloat() + "<br>" +
+        parseFloat(2.23) + "<br>" + 
+        parseFloat(-212) + "<br>" +
+        parseFloat('Anb22') + "<br>" +
+        parseFloat('752SA.22d') + "<br>" +
+        parseFloat(',-3244') + "<br>" +
+        parseFloat(.32) + "<br>" +
+        parseFloat('3.', 12) + "<br>" +
+        parseFloat(3 + 3)
+
+
+    </script>
+</body>
+</html>
