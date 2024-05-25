@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Usando self para referenciar a janela atual
+        if (window === self){
+            alert('A referência self aponta para a janela atual.')
+        }else {
+            alert('A referencia self não aponta para a janela atual.')
+        }
+        // Também pode ser usado diretamente
+        self.alert("Este alerta é mostrado pela janela atual.");
+
+        // Neste exemplo, self é utilizado para verificar se ele aponta para a janela atual e para exibir um alerta na janela atual.
+    </script>
+</body>
+</html>
