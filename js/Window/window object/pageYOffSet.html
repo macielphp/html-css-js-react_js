@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pageYOffSet</title>
+</head>
+<body>
+    <h1>PageYOffSet</h1>
+    <p>O método <code>scrollY</code> é um alias de <code>pageYOffSet</code> no objeto <code>window</code>. Ambos retornam o número de pixels que o documento foi rolado no eixo vertical.</p>
+    <h2>Motivos para você usasr pageYOffSet ou pageXOffSet</h2>
+    <script>
+        // usando scrollY para obter a quantidade de pixels roladas na vertical
+        let verticalScroll = window.scrollY;
+        console.log(`A página foi rolada ${verticalScroll} pixels na vertical`)
+
+        // Usando pageyOffSet para obter o mesmo valor
+        let verticalScrollOffSet = window.pageYOffset;
+        console.log(`A página foi rolada ${verticalScrollOffSet} pixels na vertical.`)
+
+        
+        console.log(verticalScroll === verticalScrollOffSet); // true
+</script>
+</body>
+</html>
