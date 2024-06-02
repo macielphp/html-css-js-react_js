@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções JavaScript - Async/Await Example</title>
+</head>
+<body>
+  <h1>Funções JavaScript - Async/Await</h1>
+  <h2>Async/Await Example</h2>
+  <p id="soma"></p>
+  <p id="multiplicacao"></p>
+  <script>
+    // Improved function for readability and potential reusability
+    function displayResult(resultId, message, value) {
+      document.getElementById(resultId).textContent = `${message}: ${value}`;
+    }
+
+    async function somar(num1, num2) {
+      const sum = num1 + num2;
+      displayResult('soma', 'Soma', sum);
+    }
+
+    async function multicar(num1, num2) {
+      const multiplicacao = num1 * num2;
+      displayResult('multiplicacao', 'Multiplicação', multiplicacao);
+    }
+
+    (async () => {
+      await somar(75, 21);
+      await multicar(4, 4);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .post {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .post h2 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    .post p {
+      margin: 0.5em 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Posts</h1>
+  <div id="posts-container"></div>
+
+  <script>
+    async function fetchPosts() {
+      try {
+        let response = await fetch('data.json');  // Supondo que o arquivo data.json está no mesmo diretório
+        if (!response.ok) {
+          throw new Error('Erro na rede: ' + response.statusText);
+        }
+        let data = await response.json();
+        displayPosts(data.posts);
+      } catch (error) {
+        console.error('Erro:', error);
+      }
+    }
+
+    function displayPosts(posts) {
+      const postsContainer = document.getElementById('posts-container');
+      postsContainer.innerHTML = '';  // Limpa o conteúdo anterior
+      posts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.className = 'post';
+        postElement.innerHTML = `
+          <h2>${post.title}</h2>
+          <p>${post.body}</p>
+        `;
+        postsContainer.appendChild(postElement);
+      });
+    }
+
+    // Chama a função fetchPosts quando a página é carregada
+    window.onload = fetchPosts;
+  </script>
+
+</body>
+</html>
