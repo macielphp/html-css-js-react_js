@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Symbol</title>
+</head>
+<body>
+    <script>
+        // Criando um símbolo com uma descrição
+        const meuSimbolo = Symbol('description');
+
+        // Usando o símbolo como chave de propriedade em um objeto
+        const meuObjeto = {
+            [meuSimbolo]: 'Valor associado ao símbolo'
+        };
+
+        // Acessando o valor associado ao símbolo
+        console.log(meuObjeto[meuSimbolo]); // Saída: 'Valor associado ao símbolo'
+    </script>
+</body>
+</html>

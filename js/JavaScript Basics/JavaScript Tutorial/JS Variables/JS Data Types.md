@@ -4,7 +4,7 @@
 A partir do ECMAScript 2020 (ES11), JavaScript define os seguintes 8 tipos de dados primitivos:
 1. Number:
 - Representa números inteiros e de ponto flutuante.
-- Exemplo: `42, 3.14`.
+- Exemplo: `42, 3.14`. 
 2. BigInt:
 - Representa números inteiros de precisão arbitrária, que podem ser maiores que o limite dos números Number.
 - Exemplo: `1234567890123456789012345678901234567890n`.

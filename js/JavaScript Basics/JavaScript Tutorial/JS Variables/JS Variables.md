@@ -20,7 +20,7 @@ Use const somente se as variáveis não forem reatribuídas. Exemplo:
 
 ### Hosting
 #### var
-Ao cahamar uma variável que ainda não foi declarada, o valor será de `undefined`. Quando a variável é declarada, então,
+Ao chamar uma variável que ainda não foi declarada, o valor será de `undefined`. Quando a variável é declarada, então,
 
 
 
