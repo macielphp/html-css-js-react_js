@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="output">Output: </p>
+    <script>
+
+        const frutas = ['banana','maça','limão','manga','uva'];
+        frutas.push('pera')
+
+        console.log(frutas)
+        frutas.forEach((fruta, indice) => {
+            console.log(`Eu gosto de ${fruta} e está na posição ${indice} na lista.`);
+        })
+
+        const arrayVazia = [];
+        arrayVazia == "" ? console.log(`A array está vazia.`) : console.log(arrayVazia);
+        console.log(`Vamos remover o último elemento da lista de frutas. A fruta ${frutas[frutas.lenght -1]}`)
+        frutas.pop();
+        frutas.forEach((fruta, indice) => {
+            console.log(`Fruta ${fruta} na posição ${indice}.`)
+        })
+    </script>
+    
+</body>
+</html>
