@@ -1,0 +1,35 @@
+<!-- Create a program that should decode a numeric password of four digits between 0 and 9(include). 
+ So, considering that the password has four numeric digits between 0 and 9(include), consider also that the guess function does not know the password. So the function needs to run 15.119(9! / 4! = 15.120) combitations to reach the right password. 
+ So, there will be a 'for loop' interating over combinations to get the right password.
+ When the program finds the correct password that was initially set by the user, the function shows the number of loops made to get to the correct password and show the correct password. -->
+<!-- Figma: https://www.figma.com/design/CVttYIhpbVnNQ3xN5WDMVy/Untitled?node-id=0-1&t=UI4y9mcSKkpaKVN5-1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="../challenges-01/challenge-01.css">
+</head>
+<body>
+    <section class="inicial-screen">
+        <h1 class="header-1">4-password challenge</h1>
+        <h2 class="header-2">DEFINES A PASSWORD</h2>
+        <!-- https://stackoverflow.com/questions/52885890/styling-input-password-in-html -->
+        <fieldset class="inicial-screen__form-space">
+            <label for="password">Set the 4-digit numeric password (0000 to 9999): </label>
+            <input class="inicial-screen__form-space__digit-password-space" type="password" name="password" id="password" inputmode="numeric" minlength="6" maxlength="4" size="4" placeholder="* * * *">
+            <span class="hint">New pin must be 4 digit number only</span>
+        </fieldset>
+        <div class="inicial-screen__buttons">
+            <button class="inicial-screen__button" onclick="guessPassword()">Click here to find it!</button>
+            <button class="inicial-screen__button" id="reset-button">Reset!</button>
+        </div>
+
+        <h3 class="header-3 ">HOW MANY LOOPS THE PROGRAM MADE TO FIND IT:</h3>
+        <span id="result" class="inicial-screen__number-of-loops ">0</span>
+    </section>
+    <script src="./challenges-01.js"></script>
+</body>
+</html>

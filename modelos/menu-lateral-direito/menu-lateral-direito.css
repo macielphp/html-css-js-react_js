@@ -29,7 +29,7 @@ body {
   gap: 15px;
 }
 
-.menu::-webkit-scrollbar {
+.menu::webkit-scrollbar {
   width: 0px;
   height: 0px;
 }/*# sourceMappingURL=menu-lateral-direito.css.map */
