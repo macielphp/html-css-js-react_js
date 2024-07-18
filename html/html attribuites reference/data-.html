@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-style="white" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html[data-style='white'] {
+            background-color: white;
+            color: black;
+        }
+        html[data-style='black'] {
+            background-color: black;
+            color: white;
+        }
+        body, h1 {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Title of the page</h1>
+    <p>Meu nome é Maciel</p>
+    <button id="change-color-button">Change color</button>
+    <script>
+        document.getElementById('change-color-button').addEventListener('click', changeColor);
+
+        function changeColor() {
+            const html = document.getElementById('html');
+            const currentStyle = html.getAttribute('data-style');
+            if (currentStyle === 'white') {
+                html.setAttribute('data-style', 'black');
+            } else {
+                html.setAttribute('data-style', 'white');
+            }
+        }
+    </script>
+</body>
+</html>
