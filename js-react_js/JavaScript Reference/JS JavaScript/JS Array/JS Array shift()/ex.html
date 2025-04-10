@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>shift() Example</title>
+</head>
+<body>
+  <h2>Original Array: <span id="original"></span></h2>
+  <button onclick="removeFirst()">Remove First Element</button>
+  <h3>Updated Array: <span id="updated"></span></h3>
+
+  <script>
+    const arr = document.getElementById('original');
+    const fruits = ['Banana', 'Coconut', 'Watermelon', 'Apple'];
+    arr.textContent = fruits.join(', ');
+
+    function removeFirst() {
+        fruits.shift();
+        document.getElementById('updated').textContent = fruits.join(', ');
+    }
+
+  </script>
+</body>
+</html>
