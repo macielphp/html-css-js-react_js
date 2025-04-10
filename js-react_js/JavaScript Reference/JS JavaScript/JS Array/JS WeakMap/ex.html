@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WeakMap Example</title>
+</head>
+<body>
+  <h2>Open o console (F12) para ver o resultado</h2>
+
+  <script>
+    let wm = new WeakMap();
+
+    // Objetos usados como chave
+    let user = { name: "Alice" };
+
+    wm.set(user, "Dados secretos");
+
+    console.log(wm.get(user)); // "Dados secretos"
+
+    // Removemos a referência
+    user = null;
+
+    // Agora, o objeto original pode ser coletado pelo garbage collector
+    console.log("O objeto foi removido da memória, se não houver mais referência.");
+  </script>
+</body>
+</html>

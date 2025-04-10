@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>forEach() em JS puro</title>
+    </head>
+    <body>
+        <h2>Exemplo forEach()</h2>
+        <ul id="nomes-lista">
+        </ul>
+        <script>
+            const nome = ['Alice', 'Bob', 'Charlie', 'Diana'];
+
+            const ul = document.getElementById('nomes-lista');
+
+            nome.forEach((nome) => {
+                const li = document.createElement('li');
+                li.textContent=nome;
+                ul.appendChild(li);
+            })
+        </script>
+    </body>
+</html>
