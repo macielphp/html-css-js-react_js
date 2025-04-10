@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>push() Example</title>
+</head>
+<body>
+  <h2>Array: <span id="arrayDisplay"></span></h2>
+  <input type="text" id="itemInput" placeholder="Add item..." />
+  <button onclick="addItem()">Add to Array</button>
+
+  <script>
+    const items = ["Apple", "Banana"];
+
+    function updateDisplay() {
+      document.getElementById("arrayDisplay").textContent = items.join(", ");
+    }
+
+    function addItem() {
+      const input = document.getElementById("itemInput");
+      const newItem = input.value.trim();
+      if (newItem) {
+        items.push(newItem); // Adiciona ao final
+        updateDisplay();
+        input.value = "";
+      }
+    }
+
+    updateDisplay();
+  </script>
+</body>
+</html>
