@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas examples</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas</h1>
+    <div>
+        <h2>2d static example</h2>
+        <canvas id="canvas2d-static" width="300" height="150"></canvas>
+    </div>
+    <div>
+        <h2>3D Static Example</h2>
+        <canvas id="canvas3d-static" width="300" height="150"></canvas>
+    </div>
+    <div>
+        <h2>2d animation</h2>
+        <canvas id="canvas2d-anim" width="300" height="150"></canvas>
+    </div>
+    <div>
+        <h2>3d animation</h2>
+        <canvas id="canvas3d-anim" width="300" heigth="150"></canvas>
+    </div>
+
+    <script type="module">
+         import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.module.js';
+
+        // 2d static example
+        const canvas2dStatic = document.getElementById('canvas2d-static');
+        const ctx2dStatic = canvas2dStatic.getContext('2d')
+
+        ctx2dStatic.fillStyle = 'blue';
+        ctx2dStatic.fillRect(20, 20, 100, 50);
+
+        ctx2dStatic.beginPath();
+        ctx2dStatic.moveTo(10, 10);
+        ctx2dStatic.lineTo(200, 100);
+        ctx2dStatic.strokeStyle = 'red';
+        ctx2dStatic.stroke();
+
+        ctx2dStatic.beginPath();
+        ctx2dStatic.arc(200, 105, 40, 0, Math.PI * 2);
+        ctx2dStatic.fillStyle = 'green'
+        ctx2dStatic.fill()
+
+        // === 3D Static Example (Three.js) ===
+        const canvas3dStatic = document.getElementById('canvas3d-static');
+        const rendererStatic = new THREE.WebGLRenderer({ canvas: canvas3dStatic });
+        rendererStatic.setSize(300, 150);
+
+        const sceneStatic = new THREE.Scene();
+        const cameraStatic = new THREE.PerspectiveCamera(75, 300 / 150, 0.1, 1000);
+        const cubeStatic = new THREE.Mesh(
+            new THREE.BoxGeometry(),
+            new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+        );
+
+        sceneStatic.add(cubeStatic);
+        cameraStatic.position.z = 2;
+        rendererStatic.render(sceneStatic, cameraStatic);
+
+        // 2d Animation
+        const canvas2dAnim = document.getElementById('canvas2d-anim')
+        const ctx2dAnim = canvas2dAnim.getContext('2d')
+        let x = 0;
+
+        function animate2D() {
+            ctx2dAnim.clearRect(0, 0, canvas2dAnim.width, canvas2dAnim.height);
+            ctx2dAnim.beginPath();
+            ctx2dAnim.arc(x, 90, 20, 0, Math.PI * 2);
+            ctx2dAnim.fillStyle = 'purple';
+            ctx2dAnim.fill();
+            x += 2;
+            if (x > canvas2dAnim.width) x = 0;
+            requestAnimationFrame(animate2D)
+        }
+        animate2D();
+
+        // === 3D Animation (Three.js) ===
+        const canvas3dAnim = document.getElementById('canvas3d-anim');
+        const rendererAnim = new THREE.WebGLRenderer({ canvas: canvas3dAnim });
+        rendererAnim.setSize(300, 150);
+
+        const sceneAnim = new THREE.Scene();
+        const cameraAnim = new THREE.PerspectiveCamera(75, 300 / 150, 0.1, 1000);
+        const cubeAnim = new THREE.Mesh(
+            new THREE.BoxGeometry(),
+            new THREE.MeshNormalMaterial()
+        );
+
+        sceneAnim.add(cubeAnim);
+        cameraAnim.position.z = 2;
+
+        function animate3D() {
+            requestAnimationFrame(animate3D);
+            cubeAnim.rotation.x += 0.01;
+            cubeAnim.rotation.y += 0.01;
+            rendererAnim.render(sceneAnim, cameraAnim);
+        }
+        animate3D();
+    </script>
+</body>
+</html>
