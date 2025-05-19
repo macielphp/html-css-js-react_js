@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=text] {
+            accent-color: red;
+            background-color: aqua;
+        }
+        input[type=number] {
+            accent-color: rgb(255, 255, 255);
+            background-color: brown;
+        }
+        input[type=radio] {
+            accent-color: green;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+        .passiveIncomeContainer{
+            display: flex;
+            width: 300px;
+        }
+        .passiveIncomeItem{
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <h1>accent-color example</h1>
+    <div>
+        <label for="name">What's your name?</label>
+        <input id="name" type="text" value="name">
+    </div>
+    <div>
+        <label for="age">How old are you?</label>
+        <input id="age" type="number" value="age">
+    </div>
+    <div class="passiveIncomeContainer">
+        <span>Do you have passive daily income?</span>
+        <div class="passiveIncomeItem">
+            <label for="passiveIncome">NO</label>
+            <input id="passiveIncome" type="radio" value="no" name="passiveIncome">
+        </div>
+        <div class="passiveIncomeItem">
+            <label for="passiveIncome">YES</label>
+            <input id="passiveIncome" type="radio" value="yes" name="passiveIncome">
+        </div>
+    </div>
+    
+</body>
+</html>
